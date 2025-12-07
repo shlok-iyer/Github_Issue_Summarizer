@@ -55,7 +55,7 @@ Google Gemini — for structured summarization
 
 Streamlit — for a clean, interactive frontend
 
-🧩 Architecture
+##🧩 Architecture
 <p align="center"></p>
 ✅ Tech Stack
 Category	Technology
@@ -64,7 +64,7 @@ Backend	FastAPI + httpx + Pydantic
 Frontend	Streamlit
 AI	Google Gemini 1.5
 Hosting Ready	Hugging Face / Render / Deta
-🎯 Prompt Engineering Strategy
+## 🎯 Prompt Engineering Strategy
 
 Strict Schema Enforcement → Gemini outputs JSON only, validated with Pydantic
 
@@ -76,7 +76,7 @@ Contextual Guidance → Explicit field definitions, multilingual support
 
 Truncation → Large bodies/comments are trimmed for faster inference
 
-⚙️ Edge Cases Handled
+## ⚙️ Edge Cases Handled
 Edge Case	Behavior
 ❌ Invalid repo URL	Returns 400 with clear message
 🔒 Private repo	403 with token hint
@@ -86,7 +86,7 @@ Edge Case	Behavior
 🌐 Non-English	Translated to English automatically
 ⏳ Rate limit	Warning to add GITHUB_TOKEN
 ⚙️ Invalid model	Fallback or descriptive error
-🧰 Setup & Installation
+## 🧰 Setup & Installation
 Prerequisites
 
 Python 3.11+
