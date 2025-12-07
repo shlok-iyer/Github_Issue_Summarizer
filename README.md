@@ -18,13 +18,8 @@ An intelligent tool that reads any **GitHub issue** and automatically classifies
 5. [Setup & Installation](#️-setup--installation)
 6. [Running the App](#-running-the-app)
 7. [Usage Demo](#-usage-demo)
-8. [Testing](#-testing)
-9. [Performance & Speed](#-performance--speed)
-10. [Going the Extra Mile](#-going-the-extra-mile)
-11. [Security](#-security)
-12. [Future Enhancements](#-future-enhancements)
-13. [Author](#-author)
-14. [Evaluation Mapping](#-evaluation-mapping)
+8. [Performance & Speed](#-performance--speed)
+
 
 ---
 
@@ -113,3 +108,23 @@ GOOGLE_API_KEY=AIza...your_key_here
 GITHUB_TOKEN=ghp_...optional_token
 MODEL_NAME=models/gemini-1.5-flash-latest
 ```
+
+## 🏃 Running the App
+### ▶ Backend
+```bash
+cd backend
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```
+###▶ Frontend
+```bash
+cd ../frontend
+streamlit run streamlit_app.py
+```
+###URLs:
+
+Backend: http://127.0.0.1:8000/docs
+
+Frontend: http://localhost:8501
+
+## 💡 Usage Demo
+
