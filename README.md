@@ -38,10 +38,7 @@ Each analysis includes:
 }
 ```
 ### 🤖 AI GitHub Issue Assistant
-Overview
-
-
-This project uses:
+#### This project uses:
 
   * FastAPI — for an asynchronous backend
   
