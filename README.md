@@ -51,7 +51,7 @@ Each analysis includes:
 ## 🧩 Architecture
 <p align="center"> <img src="images/architecture.png" alt="System Architecture Diagram" height="600" width="600"> </p>
 
-#✅ Tech Stack
+### ✅ Tech Stack
 
 | Category | Technology |
 | :--- | :--- |
