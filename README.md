@@ -49,7 +49,7 @@ Each analysis includes:
   * Streamlit — for a clean, interactive frontend
 
 ## 🧩 Architecture
-<p align="center"> <img src="images/architecture.png" alt="System Architecture Diagram" width="600"> </p>
+<p align="center"> <img src="images/architecture.png" alt="System Architecture Diagram" height="600" width="600"> </p>
 
 #✅ Tech Stack
 
