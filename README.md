@@ -58,7 +58,7 @@ Streamlit — for a clean, interactive frontend
 ## 🧩 Architecture
 <p align="center"> <img src="" alt="System Architecture Diagram" width="600"> </p>
 
-## ✅ Tech Stack
+#✅ Tech Stack
 
 | Category | Technology |
 | :--- | :--- |
