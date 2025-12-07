@@ -127,4 +127,29 @@ Backend: http://127.0.0.1:8000/docs
 Frontend: http://localhost:8501
 
 ## 💡 Usage Demo
+<p align="center"> <img src="" alt="Usage Demo" width="600"> </p>
+1. **Enter a repo URL** — e.g. `https://github.com/facebook/react`
+2. **Enter an issue number** — e.g. `27000`
+3. Click **Analyze Issue**
 
+### You'll See:
+The tool generates a structured analysis including:
+
+* 📝 **Summary**
+* 🏷️ **Type**
+* 🚦 **Priority**
+* 🏷️ **Suggested Labels**
+* 👾 **Potential Impact**
+* 💾 **Downloadable JSON Output**
+
+## ⚙️ Performance & Speed
+
+| Optimization | Description |
+| :--- | :--- |
+| ⚡ **Async I/O** | Parallel GitHub + Gemini calls |
+| 🧮 **Token control** | Truncates large issue text |
+| 🧠 **Few-shot prompting** | Improves classification consistency |
+| 🩺 **Health check route** | Monitors uptime |
+| ⏱️ **Latency logging** | Tracks response times |
+
+> ⏰ **Average runtime:** ~3–4 seconds per issue (Gemini Flash)
