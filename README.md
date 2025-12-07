@@ -88,7 +88,7 @@ Streamlit — for a clean, interactive frontend
 ### Prerequisites
 * Python 3.11+
 * Google AI Studio API Key (`AIza...`)
-* Optional: GitHub Token (to increase rate limit)
+*  GitHub Token (to increase rate limit)
 
 ### 1️⃣ Clone & Create Virtual Environment
 ```bash
