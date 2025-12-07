@@ -47,7 +47,7 @@ This project uses:
   
   * httpx — for GitHub API calls
   
-  *Google Gemini — for structured summarization
+  * Google Gemini — for structured summarization
   
   * Streamlit — for a clean, interactive frontend
 
