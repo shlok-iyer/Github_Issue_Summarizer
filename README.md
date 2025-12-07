@@ -75,127 +75,41 @@ Streamlit — for a clean, interactive frontend
 * **Repair Prompting** — Automatically retries malformed JSON
 * **Contextual Guidance** — Explicit field definitions + multilingual support
 * **Truncation** — Large issue bodies/comments are trimmed for faster inference
+## ⚙️ Edge Cases Handled
+
+| Edge Case | Behavior |
+| :--- | :--- |
+| ❌ Invalid repo URL | Returns `400` with clear message |
+| 🔒 Private repo | `403` with token hint |
+| 🚫 Issues disabled | Graceful error message |
+| ❓ No comments/body | Conservative JSON generation |
+| 📄 Long text | Truncated for efficiency |
+| 🌐 Non-English issues | Translated automatically |
+| ⏳ API rate limit | Warns to add `GITHUB_TOKEN` |
+| ⚙️ Invalid model | Falls back with descriptive error |
+
 ## 🧰 Setup & Installation
-Prerequisites
 
-Python 3.11+
+### Prerequisites
+* Python 3.11+
+* Google AI Studio API Key (`AIza...`)
+* Optional: GitHub Token (to increase rate limit)
 
-Google AI Studio API Key (starts with AIza...)
-
-Optional GitHub Token (to raise rate limit)
-
-1️⃣ Clone & Create Virtual Environment
-git clone https://github.com/<your-username>/ai-github-issue-assistant.git
+### 1️⃣ Clone & Create Virtual Environment
+```bash
+git clone [https://github.com/](https://github.com/)<your-username>/ai-github-issue-assistant.git
 cd ai-github-issue-assistant
 python -m venv venv
 venv\Scripts\activate  # or source venv/bin/activate
-
-2️⃣ Install Dependencies
+```
+### 2️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
-
-3️⃣ Configure Environment
-
+```
+### 3️⃣ Configure Environment
 Create file: backend/.env
-
+```bash
 GOOGLE_API_KEY=AIza...your_key_here
 GITHUB_TOKEN=ghp_...optional_token
 MODEL_NAME=models/gemini-1.5-flash-latest
-
-🏃 Running the App
-▶ Backend
-cd backend
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-
-▶ Frontend
-cd ../frontend
-streamlit run streamlit_app.py
-
-URLs
-
-Backend: http://127.0.0.1:8000/docs
-
-Frontend: http://localhost:8501
-
-💡 Usage Demo
-
-Enter a repo URL → e.g. https://github.com/facebook/react
-
-Enter an issue number → e.g. 27000
-
-Click Analyze Issue
-
-Output Includes:
-
-Summary
-
-Type
-
-Priority
-
-Suggested Labels
-
-Potential Impact
-
-Downloadable JSON
-
-🧪 Testing
-pip install pytest
-pytest -q
-
-Tests cover:
-
-Health endpoint
-
-Invalid repo or issue
-
-No comments/body
-
-JSON validation and structure
-
-⚙️ Performance & Speed
-Optimization	Description
-⚡ Async I/O	Parallel GitHub + Gemini calls
-🧮 Token control	Truncation for long issues
-🧠 Few-shot	Improves consistency
-🩺 Health check	Quick status route
-⏱ Latency logs	Monitors performance
-
-Average runtime: 3–4 seconds per issue (Gemini Flash)
-
-🌱 Going the Extra Mile
-Enhancement	Purpose
-✅ JSON download button	Export results easily
-✅ Inline warnings	Clear feedback UX
-✅ Repair prompt	Recovers malformed JSON
-✅ Copy-to-clipboard	One-click JSON copy
-✅ Rich README	Rubric-aligned documentation
-✅ Expanded few-shot prompt	Higher reliability
-🔐 Security
-
-.env excluded via .gitignore
-
-Use read-only GitHub tokens
-
-Revoke API keys after testing
-
-🧭 Future Enhancements
-
-Repo-specific label ontology
-
-Persistent caching (SQLite / Redis)
-
-Batch analysis mode
-
-Evaluation metrics (ROUGE / F1)
-
-💬 Author
-
-Shlok Iyer
-AI Engineer • Problem Solver • Loves clean code 🌿
-
-🏁 Evaluation Mapping (Seedling Labs Rubric)
-Criterion	Deliverable
-Problem Solving & AI Acumen (40%)	Few-shot prompt, schema validation, edge handling
-Code Quality (30%)	Modular structure, docstrings, README
-Speed & Efficiency (20%)	Async design, token control
-Communication & Initiative (10%)	Clear commits, UX extras, polished docs
+```
