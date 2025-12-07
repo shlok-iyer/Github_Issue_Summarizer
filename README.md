@@ -128,6 +128,7 @@ Frontend: http://localhost:8501
 
 ## 💡 Usage Demo
 <p align="center"> <img src="" alt="Usage Demo" width="600"> </p>
+
 1. **Enter a repo URL** — e.g. `https://github.com/facebook/react`
 2. **Enter an issue number** — e.g. `27000`
 3. Click **Analyze Issue**
