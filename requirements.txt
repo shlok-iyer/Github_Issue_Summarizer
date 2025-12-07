@@ -1,0 +1,18 @@
+# ---- Core AI + Google Gemini ----
+google-generativeai==0.7.2
+python-dotenv==1.0.1
+
+# ---- Backend (FastAPI + HTTP) ----
+fastapi==0.115.5
+uvicorn[standard]==0.32.0
+httpx==0.27.2
+pydantic==2.9.2
+
+# ---- Frontend (Streamlit) ----
+streamlit==1.40.1
+requests==2.32.3
+
+# ---- Optional Enhancements ----
+aiofiles==24.1.0          # for serving static files if needed later
+jinja2==3.1.4             # templating (optional)
+python-multipart==0.0.9   # for future file uploads
