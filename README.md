@@ -42,4 +42,17 @@ Each analysis includes:
   "potential_impact": "Concise impact statement"
 }
 
+🧩 Architecture
+<p align="center"> <img src="assets/architecture_placeholder.png" alt="Architecture Diagram" width="700"> </p>
 
+✅ Tech Stack
+
+Language: Python 3.11
+
+Backend: FastAPI + httpx + Pydantic
+
+Frontend: Streamlit
+
+AI: Google Gemini 1.5
+
+Hosting Ready: Hugging Face / Render / Deta
