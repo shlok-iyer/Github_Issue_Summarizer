@@ -37,7 +37,7 @@ Each analysis includes:
   "potential_impact": "Concise impact statement"
 }
 ```
-🤖 AI GitHub Issue Assistant
+### 🤖 AI GitHub Issue Assistant
 Overview
 
 This project uses:
