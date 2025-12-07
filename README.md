@@ -60,7 +60,7 @@ Streamlit — for a clean, interactive frontend
 | **Language** | Python 3.11 |
 | **Backend** | FastAPI + httpx + Pydantic |
 | **Frontend** | Streamlit |
-| **AI Model** | Google Gemini 1.5 |
+| **AI Model** | Google Gemini 2.5 Flash |
 | **Hosting Ready** | Hugging Face / Render / Deta |
 
 ## 🎯 Prompt Engineering Strategy
