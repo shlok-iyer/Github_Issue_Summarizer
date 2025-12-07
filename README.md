@@ -127,7 +127,13 @@ Backend: http://127.0.0.1:8000/docs
 Frontend: http://localhost:8501
 
 ## 💡 Usage Demo
-<p align="center"> <img src="" alt="Usage Demo" width="600"> </p>
+<p align="center">
+  <img src="images/frontendimg.png" alt="System Architecture Diagram" width="600">
+  <img src="images/demo1.png" alt="System Architecture Diagram" width="600">
+  <img src="images/demo2.png" alt="System Architecture Diagram" width="600">
+  <img src="images/demo3.png" alt="System Architecture Diagram" width="600">
+</p>
+
 
 1. **Enter a repo URL** — e.g. `https://github.com/facebook/react`
 2. **Enter an issue number** — e.g. `27000`
