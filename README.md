@@ -42,18 +42,171 @@ Each analysis includes:
   "potential_impact": "Concise impact statement"
 }
 ```
-It uses:FastAPI for an asynchronous backendhttpx for GitHub API callsGoogle Gemini for structured summarizationStreamlit for a clean, interactive frontend🧩 Architecture<p align="center">  </p>✅ Tech StackLanguage: Python 3.11Backend: FastAPI + httpx + PydanticFrontend: StreamlitAI: Google Gemini 1.5Hosting Ready: Hugging Face / Render / Deta🎯 Prompt Engineering StrategyStrict Schema Enforcement → Gemini outputs JSON only, validated with PydanticMulti-shot Few-Shot Prompting → 4 examples (Bug, Feature, Docs, Question)Repair Prompt → If malformed JSON, retry automaticallyContextual Guidance → Explicit field definitions, multilingual supportTruncation → Large bodies/comments are trimmed for faster inference⚙️ Edge Cases HandledEdge CaseBehavior❌ Invalid repo URLReturns 400 with clear message🔒 Private repo403 with token hint🚫 Issues disabledGraceful error with message❓ No comments/bodyConservative JSON generation🧾 Long textTruncated for efficiency🌐 Non-EnglishTranslated to English automatically⏳ Rate limitWarning to add GITHUB_TOKEN⚙️ Invalid modelFallback or descriptive error🧰 Setup & InstallationPrerequisitesPython 3.11+Google AI Studio API Key (starts with AIza...)Optional GitHub Token (to raise rate limit)1️⃣ Clone & Create venvBashgit clone [https://github.com/](https://github.com/)<your-username>/ai-github-issue-assistant.git
+🤖 AI GitHub Issue Assistant
+Overview
+
+This project uses:
+
+FastAPI — for an asynchronous backend
+
+httpx — for GitHub API calls
+
+Google Gemini — for structured summarization
+
+Streamlit — for a clean, interactive frontend
+
+🧩 Architecture
+<p align="center"></p>
+✅ Tech Stack
+Category	Technology
+Language	Python 3.11
+Backend	FastAPI + httpx + Pydantic
+Frontend	Streamlit
+AI	Google Gemini 1.5
+Hosting Ready	Hugging Face / Render / Deta
+🎯 Prompt Engineering Strategy
+
+Strict Schema Enforcement → Gemini outputs JSON only, validated with Pydantic
+
+Multi-shot Few-Shot Prompting → 4 examples (Bug, Feature, Docs, Question)
+
+Repair Prompt → If malformed JSON, retry automatically
+
+Contextual Guidance → Explicit field definitions, multilingual support
+
+Truncation → Large bodies/comments are trimmed for faster inference
+
+⚙️ Edge Cases Handled
+Edge Case	Behavior
+❌ Invalid repo URL	Returns 400 with clear message
+🔒 Private repo	403 with token hint
+🚫 Issues disabled	Graceful error with message
+❓ No comments/body	Conservative JSON generation
+🧾 Long text	Truncated for efficiency
+🌐 Non-English	Translated to English automatically
+⏳ Rate limit	Warning to add GITHUB_TOKEN
+⚙️ Invalid model	Fallback or descriptive error
+🧰 Setup & Installation
+Prerequisites
+
+Python 3.11+
+
+Google AI Studio API Key (starts with AIza...)
+
+Optional GitHub Token (to raise rate limit)
+
+1️⃣ Clone & Create Virtual Environment
+git clone https://github.com/<your-username>/ai-github-issue-assistant.git
 cd ai-github-issue-assistant
 python -m venv venv
-venv\Scripts\activate # or source venv/bin/activate
-2️⃣ Install DependenciesBashpip install -r requirements.txt
-3️⃣ Configure EnvironmentCreate file: backend/.envIni, TOMLGOOGLE_API_KEY=AIza...your_key_here
+venv\Scripts\activate  # or source venv/bin/activate
+
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+
+3️⃣ Configure Environment
+
+Create file: backend/.env
+
+GOOGLE_API_KEY=AIza...your_key_here
 GITHUB_TOKEN=ghp_...optional_token
 MODEL_NAME=models/gemini-1.5-flash-latest
-🏃 Running the App▶ BackendBashcd backend
+
+🏃 Running the App
+▶ Backend
+cd backend
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
-▶ FrontendBashcd ../frontend
+
+▶ Frontend
+cd ../frontend
 streamlit run streamlit_app.py
-URLsBackend: http://127.0.0.1:8000/docsFrontend: http://localhost:8501💡 Usage DemoEnter a repo URL → e.g. https://github.com/facebook/reactEnter an issue number → e.g. 27000Click Analyze IssueView:SummaryTypePrioritySuggested LabelsPotential ImpactDownloadable JSON🧪 TestingBashpip install pytest
+
+URLs
+
+Backend: http://127.0.0.1:8000/docs
+
+Frontend: http://localhost:8501
+
+💡 Usage Demo
+
+Enter a repo URL → e.g. https://github.com/facebook/react
+
+Enter an issue number → e.g. 27000
+
+Click Analyze Issue
+
+Output Includes:
+
+Summary
+
+Type
+
+Priority
+
+Suggested Labels
+
+Potential Impact
+
+Downloadable JSON
+
+🧪 Testing
+pip install pytest
 pytest -q
-Tests cover:Health endpointInvalid repo or issueNo comments/bodyJSON validation and structure⚙️ Performance & SpeedOptimizationDescription⚡ Async I/OParallel GitHub + Gemini calls🧮 Token controlTruncation for long issues🧠 Few-shotImproves consistency🩺 Health checkQuick status route⏱ Latency logsMonitors performanceAverage runtime: 3–4 seconds per issue (Gemini Flash).🌱 Going the Extra MileEnhancementPurpose✅ JSON download buttonExport results easily✅ Inline warningsClear feedback UX✅ Repair promptRecovers malformed JSON✅ Copy-to-clipboardOne-click JSON copy✅ Rich READMERubric-aligned documentation✅ Expanded few-shot promptHigher reliability🔐 Security.env excluded via .gitignoreUse read-only GitHub tokensRevoke API keys after testing🧭 Future EnhancementsRepo-specific label ontologyPersistent caching (SQLite/Redis)Batch analysis modeEvaluation metrics (ROUGE/F1)💬 AuthorShlok IyerAI Engineer • Problem Solver • Loves clean code 🌿🏁 Evaluation Mapping (Seedling Labs Rubric)CriterionDeliverableProblem Solving & AI Acumen (40 %)Few-shot prompt, schema validation, edge handlingCode Quality (30 %)Modular structure, docstrings, READMESpeed & Efficiency (20 %)Async design, token controlCommunication & Initiative (10 %)Clear commits, UX extras, polished docs
+
+Tests cover:
+
+Health endpoint
+
+Invalid repo or issue
+
+No comments/body
+
+JSON validation and structure
+
+⚙️ Performance & Speed
+Optimization	Description
+⚡ Async I/O	Parallel GitHub + Gemini calls
+🧮 Token control	Truncation for long issues
+🧠 Few-shot	Improves consistency
+🩺 Health check	Quick status route
+⏱ Latency logs	Monitors performance
+
+Average runtime: 3–4 seconds per issue (Gemini Flash)
+
+🌱 Going the Extra Mile
+Enhancement	Purpose
+✅ JSON download button	Export results easily
+✅ Inline warnings	Clear feedback UX
+✅ Repair prompt	Recovers malformed JSON
+✅ Copy-to-clipboard	One-click JSON copy
+✅ Rich README	Rubric-aligned documentation
+✅ Expanded few-shot prompt	Higher reliability
+🔐 Security
+
+.env excluded via .gitignore
+
+Use read-only GitHub tokens
+
+Revoke API keys after testing
+
+🧭 Future Enhancements
+
+Repo-specific label ontology
+
+Persistent caching (SQLite / Redis)
+
+Batch analysis mode
+
+Evaluation metrics (ROUGE / F1)
+
+💬 Author
+
+Shlok Iyer
+AI Engineer • Problem Solver • Loves clean code 🌿
+
+🏁 Evaluation Mapping (Seedling Labs Rubric)
+Criterion	Deliverable
+Problem Solving & AI Acumen (40%)	Few-shot prompt, schema validation, edge handling
+Code Quality (30%)	Modular structure, docstrings, README
+Speed & Efficiency (20%)	Async design, token control
+Communication & Initiative (10%)	Clear commits, UX extras, polished docs
