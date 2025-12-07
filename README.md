@@ -40,15 +40,16 @@ Each analysis includes:
 ### 🤖 AI GitHub Issue Assistant
 Overview
 
+
 This project uses:
 
-FastAPI — for an asynchronous backend
-
-httpx — for GitHub API calls
-
-Google Gemini — for structured summarization
-
-Streamlit — for a clean, interactive frontend
+  * FastAPI — for an asynchronous backend
+  
+  * httpx — for GitHub API calls
+  
+  *Google Gemini — for structured summarization
+  
+  * Streamlit — for a clean, interactive frontend
 
 ## 🧩 Architecture
 <p align="center"> <img src="images/architecture.png" alt="System Architecture Diagram" width="600"> </p>
